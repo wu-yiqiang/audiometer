@@ -8,19 +8,20 @@ class SettingsPage extends StatelessWidget {
       body: SafeArea(
         child: Container(
           padding: EdgeInsetsGeometry.all(14),
-          child: Flex(
+          child: SingleChildScrollView(
+            child: Flex(
             direction: Axis.vertical,
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             spacing: 26,
             children: [
-              SettingsCard(),
-              SettingsCard(),
-              SettingsCard(),
-              SettingsCard(),
+                SettingsCard(title: "通用设置"),
+                SettingsCard(title: "音频设置"),
+                SettingsCard(title: "关于"),
             ],
           ),
         ),
+      ),
       ),
     );
   }

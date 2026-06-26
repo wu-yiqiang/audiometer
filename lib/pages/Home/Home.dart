@@ -17,26 +17,22 @@ class HomePage extends StatelessWidget {
       ),
       bottomNavigationBar: Obx(() =>
         BottomNavigationBar(
-          // backgroundColor: PrimaryColor,
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.mic, color: Colors.black),
               label: 'recorder'.tr,
               activeIcon: Icon(Icons.mic, color: PrimaryColor),
-              backgroundColor: PrimaryColor,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.graphic_eq, color: Colors.black),
               label: 'decibelMeter'.tr,
               activeIcon: Icon(Icons.graphic_eq, color: PrimaryColor),
-              backgroundColor: PrimaryColor,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.settings, color: Colors.black),
               label: 'settings'.tr,
               activeIcon: Icon(Icons.settings, color: PrimaryColor,
               ),
-              backgroundColor: PrimaryColor,
             ),
           ],
           currentIndex: homeController.currentIndex.value,
