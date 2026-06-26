@@ -1,4 +1,6 @@
+import 'package:audiometer/binding.dart';
 import 'package:audiometer/pages/Home/Home.dart';
+import 'package:audiometer/translation/translation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,7 +12,15 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(home: HomePage());
+    return GetMaterialApp(
+      home: HomePage(),
+      locale: Locale(
+        "en",
+        "US",
+      ),
+      initialBinding: AllControllerBinding(),
+      translations: Language(),
+    );
   }
 }
 
