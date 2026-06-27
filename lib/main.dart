@@ -14,6 +14,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       home: HomePage(),
+      theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          elevation: 0.0, // 阴影高度
+          scrolledUnderElevation: 0.0, // 滚动到内容下方时的阴影高度
+          surfaceTintColor: Colors.transparent, // 核心：禁用 M3 的表面色调叠加
+        ),
+      ),
       locale: Locale(
         "en",
         "US",

@@ -1,7 +1,7 @@
 import 'package:audiometer/common/const.dart';
-import 'package:audiometer/pages/DecibelMeter/DecibeMeter.dart';
+import 'package:audiometer/pages/DecibelMeterPage/DecibeMeterPage.dart';
 import 'package:audiometer/pages/Home/Controllers/Home_Controller.dart';
-import 'package:audiometer/pages/Recorder/Recorder.dart';
+import 'package:audiometer/pages/RecorderPage/RecorderPage.dart';
 import 'package:audiometer/pages/Settings/Settings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
