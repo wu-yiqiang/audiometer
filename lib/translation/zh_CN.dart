@@ -5,5 +5,7 @@ final Map<String, String> zh_CN = {
   'deleteTips': "删除提示",
   'confirmDeleteTheRecorder': "确认删除该段录音？",
   'cancel': "取消",
-  "confirm": "确认"
+  "confirm": "确认",
+  'rename': "重命名",
+  'recording': "录音"
 };

@@ -1,10 +1,17 @@
 import 'package:audiometer/binding.dart';
-import 'package:audiometer/pages/Home/Home.dart';
+import 'package:audiometer/common/const.dart';
+import 'package:audiometer/router/router.dart';
 import 'package:audiometer/translation/translation.dart';
+import 'package:audiometer/utils/eventBus.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void main() {
+  eventBus.on(Events.NAVIGATE.name, (ROUTERKEY) {
+    if (ROUTERKEY.isNotEmpty) {
+      Get.toNamed(ROUTERKEY!);
+    }
+  });
   runApp(const MyApp());
 }
 
@@ -13,12 +20,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: HomePage(),
+      initialRoute: routerMap['HOME'],
+      getPages: AppPages.pages,
       theme: ThemeData(
+        // colorScheme: ColorScheme.fromSeed(
+        //   seedColor: PrimaryColor,
+        //   brightness: Brightness.light,
+        // ),
         appBarTheme: AppBarTheme(
-          elevation: 0.0, // 阴影高度
-          scrolledUnderElevation: 0.0, // 滚动到内容下方时的阴影高度
-          surfaceTintColor: Colors.transparent, // 核心：禁用 M3 的表面色调叠加
         ),
       ),
       locale: Locale(

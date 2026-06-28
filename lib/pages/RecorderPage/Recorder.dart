@@ -1,5 +1,6 @@
+import 'package:audiometer/common/const.dart';
+import 'package:audiometer/widgets/DeleteDialog.dart';
 import 'package:audiometer/widgets/IconsButton.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,6 +12,7 @@ class Recorder extends StatefulWidget {
 }
 
 class _Recorder extends State<Recorder> {
+  double timelength = 0;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,14 +23,50 @@ class _Recorder extends State<Recorder> {
       child: Flex(
         direction: Axis.vertical,
         children: [
-          Flex(direction: Axis.horizontal,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Flex(
+            direction: Axis.horizontal,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Expanded(child: Flex(direction: Axis.vertical,crossAxisAlignment: CrossAxisAlignment.start, spacing: 2,children: [
-                Text("SDSDSD33333333萨达dasd萨达的r萨达1999nu900k0",overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 14),),
-                Text("2026/06/27", style: TextStyle(fontSize: 12),)
-              ],),),
-              IconsButton(icon: Icons.play_circle, onPress: () {})
+              Expanded(
+                child: Flex(
+                  direction: Axis.vertical,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  spacing: 2,
+                  children: [
+                    Text(
+                      "SDSDSD33333333萨达dasd萨达的r萨达1999nu900k0",
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(fontSize: 14),
+                    ),
+                    Text("2026/06/27", style: TextStyle(fontSize: 12)),
+                  ],
+                ),
+              ),
+              IconsButton(icon: Icons.play_circle, onPress: () {}),
+            ],
+          ),
+          Flex(
+            direction: Axis.horizontal,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("00:00"),
+              Expanded(
+                child: Slider(
+                  value: timelength,
+                  min: 0,
+                  max: 100,
+                  divisions: 10,
+                  activeColor: SecondColor,
+                  inactiveColor: Colors.grey,
+                  thumbColor: PrimaryColor,
+                  onChanged: (value) {
+                    setState(() {
+                      timelength = value;
+                    });
+                  },
+                ),
+              ),
+              Text("12:08"),
             ],
           ),
           Container(
@@ -37,37 +75,41 @@ class _Recorder extends State<Recorder> {
               children: [
                 Expanded(
                   flex: 1,
-                  child: IconsButton(icon: Icons.delete_forever_outlined, onPress: () {
-                    showCupertinoDialog<void>(
-                        context: context,
-                        builder: (BuildContext context) => CupertinoAlertDialog(
-                          title: Text('deleteTips'.tr),
-                          content: Text(
-                            'confirmDeleteTheRecorder'.tr,
-                          ),
-                          actions: <CupertinoDialogAction>[
-                            CupertinoDialogAction(
-                              isDefaultAction: true,
-                              onPressed: () {
-                                Navigator.pop(context);
-                              },
-                              child: Text('cancel'.tr),
-                            ),
-                            CupertinoDialogAction(
-                              isDestructiveAction: true,
-                              onPressed: () {
-                                Navigator.pop(context);
-                              },
-                              child: Text('confirm'.tr),
+                  child: IconsButton(
+                    icon: Icons.delete_forever_outlined,
+                    onPress: () async {
+                      bool? deleted = await showDeleteConfirmDialog(
+                        context,
+                        'deleteTips'.tr,
+                        Text('confirmDeleteTheRecorder'.tr),
+                      );
+                      if (deleted == true) {}
+                    },
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: IconsButton(
+                    icon: Icons.drive_file_rename_outline,
+                    onPress: () async {
+                      bool? deleted = await showDeleteConfirmDialog(
+                        context,
+                        'rename'.tr,
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            TextField(
+                              autofocus: true,
+                              decoration: InputDecoration(
+                                hintText: 'rename'.tr,
+                              ),
                             ),
                           ],
                         ),
                       );
-                  }),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: IconsButton(icon: Icons.drive_file_rename_outline, onPress: () {}),
+                      if (deleted == true) {}
+                    },
+                  ),
                 ),
                 Expanded(
                   flex: 1,
@@ -75,10 +117,16 @@ class _Recorder extends State<Recorder> {
                 ),
                 Expanded(
                   flex: 1,
-                  child: IconsButton(icon: Icons.volume_up_outlined, onPress: () {}),
+                  child: IconsButton(
+                    icon: Icons.volume_up_outlined,
+                    onPress: () {},
+                  ),
                 ),
               ],
-            ),)
-      ],));
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

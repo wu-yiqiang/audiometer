@@ -1,4 +1,6 @@
 import 'package:audiometer/pages/RecorderPage/Recorder.dart';
+import 'package:audiometer/router/router.dart';
+import 'package:audiometer/utils/eventBus.dart';
 import 'package:audiometer/widgets/IconsButton.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -7,10 +9,7 @@ class RecorderPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("录音机", style: TextStyle(fontSize: 18)),
-        scrolledUnderElevation: 0.0,
-        surfaceTintColor: Colors.transparent, // 核心：禁用 M3 的表面色调叠加
-        elevation: 0.0,
+        title: Text("recorder".tr, style: TextStyle(fontSize: 18)),
         actions: <Widget>[
           IconsButton(
             icon: Icons.search,
@@ -67,7 +66,12 @@ class RecorderPage extends StatelessWidget {
                     IconsButton(
                       icon: Icons.radio_button_checked,
                       size: 46,
-                      onPress: () {},
+                      onPress: () {
+                        eventBus.emit(
+                          Events.NAVIGATE.name,
+                          routerMap['RECORDING']!,
+                        );
+                      },
                     ),
                   ],
                 ),

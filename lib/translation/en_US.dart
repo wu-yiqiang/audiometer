@@ -5,5 +5,7 @@ final Map<String, String> en_US = {
   'deleteTips': "Delete Tips",
   'confirmDeleteTheRecorder': "Confirm Delete the Recorder?",
   'cancel': "Cancel",
-  "confirm": "Confirm"
+  'confirm': "Confirm",
+  'rename':"Rename",
+  'recording': "Recording"
 };
