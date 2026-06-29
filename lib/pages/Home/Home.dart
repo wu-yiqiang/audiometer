@@ -19,17 +19,17 @@ class HomePage extends StatelessWidget {
         BottomNavigationBar(
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.mic, color: Colors.black),
+              icon: Icon(Icons.mic),
               label: 'recorder'.tr,
               activeIcon: Icon(Icons.mic, color: PrimaryColor),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.graphic_eq, color: Colors.black),
+              icon: Icon(Icons.graphic_eq),
               label: 'decibelMeter'.tr,
               activeIcon: Icon(Icons.graphic_eq, color: PrimaryColor),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.settings, color: Colors.black),
+              icon: Icon(Icons.settings),
               label: 'settings'.tr,
               activeIcon: Icon(Icons.settings, color: PrimaryColor,
               ),

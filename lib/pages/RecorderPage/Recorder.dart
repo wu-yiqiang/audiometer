@@ -17,8 +17,10 @@ class _Recorder extends State<Recorder> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
+      padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(4)),
+        borderRadius: BorderRadius.all(Radius.circular(6)),
+        color: Color.fromARGB(250, 250, 250, 250)
       ),
       child: Flex(
         direction: Axis.vertical,
@@ -55,7 +57,6 @@ class _Recorder extends State<Recorder> {
                   value: timelength,
                   min: 0,
                   max: 100,
-                  divisions: 10,
                   activeColor: SecondColor,
                   inactiveColor: Colors.grey,
                   thumbColor: PrimaryColor,
@@ -101,6 +102,12 @@ class _Recorder extends State<Recorder> {
                             TextField(
                               autofocus: true,
                               decoration: InputDecoration(
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: PrimaryColor),
+                                ),
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: PrimaryColor),
+                                ),
                                 hintText: 'rename'.tr,
                               ),
                             ),

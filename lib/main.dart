@@ -1,12 +1,16 @@
 import 'package:audiometer/binding.dart';
 import 'package:audiometer/common/const.dart';
 import 'package:audiometer/router/router.dart';
+import 'package:audiometer/store/store.dart';
 import 'package:audiometer/translation/translation.dart';
 import 'package:audiometer/utils/eventBus.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
-void main() {
+void main() async {
+  await GetStorage.init();
+  storeInit();
   eventBus.on(Events.NAVIGATE.name, (ROUTERKEY) {
     if (ROUTERKEY.isNotEmpty) {
       Get.toNamed(ROUTERKEY!);
@@ -23,16 +27,13 @@ class MyApp extends StatelessWidget {
       initialRoute: routerMap['HOME'],
       getPages: AppPages.pages,
       theme: ThemeData(
-        // colorScheme: ColorScheme.fromSeed(
-        //   seedColor: PrimaryColor,
-        //   brightness: Brightness.light,
-        // ),
+        brightness: getTheme(),
         appBarTheme: AppBarTheme(
         ),
       ),
       locale: Locale(
-        "en",
-        "US",
+        storeGetValue(settingStoreKeys['LANGUAGE']!),
+        storeGetValue(settingStoreKeys['COUNTRY']!),
       ),
       initialBinding: AllControllerBinding(),
       translations: Language(),

@@ -7,5 +7,12 @@ final Map<String, String> zh_CN = {
   'cancel': "取消",
   "confirm": "确认",
   'rename': "重命名",
-  'recording': "录音"
+  'recording': "录音",
+  'language': "语言",
+  'theme': "主题",
+  'audioSettings': "音频设置",
+  'recorderFormater': "录音格式",
+  'about': "关于",
+  'version': "版本号",
+  'selectlanguage': "选择语言"
 };

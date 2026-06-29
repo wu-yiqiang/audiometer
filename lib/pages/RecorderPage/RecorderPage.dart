@@ -9,6 +9,9 @@ class RecorderPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
+        elevation: 0,
         title: Text("recorder".tr, style: TextStyle(fontSize: 18)),
         actions: <Widget>[
           IconsButton(

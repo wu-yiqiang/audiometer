@@ -7,5 +7,13 @@ final Map<String, String> en_US = {
   'cancel': "Cancel",
   'confirm': "Confirm",
   'rename':"Rename",
-  'recording': "Recording"
+  'recording': "Recording",
+  'general': "General",
+  'language': "Language",
+  'theme': "Theme",
+  'audioSettings': "Audio Settings",
+  'recorderFormater': "Recorder Formater",
+  'about': "About",
+  'version': "Version",
+  'selectlanguage': "Select Language"
 };
