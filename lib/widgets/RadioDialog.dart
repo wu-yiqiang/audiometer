@@ -15,7 +15,7 @@ Future<bool?> radioDialog(context, String title, Widget widget) {
         content: Container(
           padding: EdgeInsetsGeometry.all(2),
           // width: dialogWidth,
-          child: Container(width: double.infinity, child: widget, height: 160,),
+          child: Container(width: double.infinity, child: widget, height: 120),
         ),
       );
     },

@@ -10,7 +10,9 @@ Future<bool?> showDeleteConfirmDialog(context, String title, Widget widget) {
     builder: (context) {
       return AlertDialog(
         title: Text(title),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4))),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(6)),
+        ),
         content: Container(
           padding: EdgeInsetsGeometry.all(2),
           width: dialogWidth,

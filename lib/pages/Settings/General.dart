@@ -1,4 +1,7 @@
-import 'package:audiometer/store/store.dart';
+import 'package:audiometer/common/const.dart';
+import 'package:audiometer/pages/Settings/LanguageCard.dart';
+import 'package:audiometer/pages/Settings/ThemeCard.dart';
+import 'package:audiometer/pages/Settings/settings_controller/general_controller.dart';
 import 'package:audiometer/widgets/RadioDialog.dart';
 import 'package:audiometer/widgets/SettingsCard.dart';
 import 'package:flutter/material.dart';
@@ -12,98 +15,15 @@ class General extends StatefulWidget {
 }
 
 class _General extends State<General> {
-  String _groupValue = storeGetValue(settingStoreKeys['LANGUAGE']!);
-
+  final GeneralController generalController = Get.put(GeneralController());
   @override
   Widget build(BuildContext context) {
     return SettingsCard(
       title: "general".tr,
       widgets: [
-        GestureDetector(
-          behavior: HitTestBehavior.opaque, // 核心代码
-          onTap: () async {
-            await radioDialog(
-              context,
-              'selectlanguage'.tr,
-              Container(
-                width: double.infinity,
-                child: RadioGroup<String>(
-                  groupValue: _groupValue,
-                  onChanged: (String? value) {
-                    setState(() {
-                      storeSetValue(settingStoreKeys['LANGUAGE']!, value);
-                    });
-                  },
-                  child: Column(
-                    children: <Widget>[
-                      Row(
-                        children: [
-                          Text("简体中文"),
-                          Radio<String>(value: 'en'),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Text("English"),
-                          Radio<String>(value: 'zh'),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            );
-          },
-          child: Flex(
-            direction: Axis.horizontal,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            spacing: 14,
-            children: [
-              Expanded(
-                child: Flex(
-                  direction: Axis.vertical,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  spacing: 4,
-                  children: [
-                    Text("language".tr, style: TextStyle(fontSize: 18)),
-                  ],
-                ),
-              ),
-              Row(
-                spacing: 8,
-                children: [
-                  Text(
-                    storeGetValue(settingStoreKeys['LANGUAGE']!),
-                    style: TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-
-        Divider(color: Colors.amber),
-        Flex(
-          direction: Axis.horizontal,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          spacing: 14,
-          children: [
-            Expanded(
-              child: Flex(
-                direction: Axis.vertical,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 4,
-                children: [Text("theme".tr, style: TextStyle(fontSize: 18))],
-              ),
-            ),
-            Row(
-              spacing: 8,
-              children: [Text("暗黑模式", style: TextStyle(fontSize: 18))],
-            ),
-          ],
-        ),
+        LanguageCard(),
+        Divider(color: const Color.fromARGB(255, 247, 246, 243)),
+        ThemeCard()
       ],
     );
   }

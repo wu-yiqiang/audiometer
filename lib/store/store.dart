@@ -50,7 +50,13 @@ void storeSaveMap(Map maps, Map data) {
 }
 
 dynamic getTheme() {
+  bool theme = isDark();
+  if (theme) return Brightness.dark;
+  return Brightness.light;
+}
+
+bool isDark() {
   dynamic theme = storeGetValue(settingStoreKeys['THEME']!);
-  if (theme == "light") return Brightness.light;
-  if (theme == 'dark') return Brightness.dark;
+  if (theme == 'dark') return true;
+  return false;
 }

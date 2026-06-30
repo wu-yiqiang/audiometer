@@ -1,3 +1,5 @@
+import 'package:audiometer/common/const.dart';
+import 'package:audiometer/store/store.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,7 +19,7 @@ class SettingsCard extends StatelessWidget {
           width: double.infinity,
           padding: EdgeInsets.all(10),
           decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 245, 245, 245),
+            color: isDark() ? DarkBackgroundColor : LightBackgroundColor,
             borderRadius: BorderRadius.all(Radius.circular(4)),
           ),
           child: Flex(direction: Axis.vertical, children: widgets),

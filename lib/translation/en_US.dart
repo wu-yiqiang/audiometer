@@ -15,5 +15,9 @@ final Map<String, String> en_US = {
   'recorderFormater': "Recorder Formater",
   'about': "About",
   'version': "Version",
-  'selectlanguage': "Select Language"
-};
+  'selectlanguage': "Select Language",
+  'darkMode': "Dark Mode",
+  'lightMode': "Light Mode",
+  'selectTheme': "Select Theme",
+  'systemTheme': 'System Theme'
+  };

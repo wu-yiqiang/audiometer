@@ -1,4 +1,5 @@
 import 'package:audiometer/common/const.dart';
+import 'package:audiometer/store/store.dart';
 import 'package:audiometer/widgets/DeleteDialog.dart';
 import 'package:audiometer/widgets/IconsButton.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class _Recorder extends State<Recorder> {
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(6)),
-        color: Color.fromARGB(250, 250, 250, 250)
+        color: isDark() ? DarkBackgroundColor : LightBackgroundColor,
       ),
       child: Flex(
         direction: Axis.vertical,

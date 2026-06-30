@@ -11,8 +11,13 @@ final Map<String, String> zh_CN = {
   'language': "语言",
   'theme': "主题",
   'audioSettings': "音频设置",
+  'general': "通用设置",
   'recorderFormater': "录音格式",
   'about': "关于",
   'version': "版本号",
-  'selectlanguage': "选择语言"
+  'selectlanguage': "选择语言",
+  'darkMode': "深色模式",
+  'lightMode': "浅色模式",
+  'selectTheme': "选择主题",
+  'systemTheme': '系统主题'
 };
