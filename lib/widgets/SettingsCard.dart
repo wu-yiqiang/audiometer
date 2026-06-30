@@ -19,7 +19,7 @@ class SettingsCard extends StatelessWidget {
           width: double.infinity,
           padding: EdgeInsets.all(10),
           decoration: BoxDecoration(
-            color: isDark() ? DarkBackgroundColor : LightBackgroundColor,
+            color: Theme.of(context).colorScheme.surfaceContainer, 
             borderRadius: BorderRadius.all(Radius.circular(4)),
           ),
           child: Flex(direction: Axis.vertical, children: widgets),

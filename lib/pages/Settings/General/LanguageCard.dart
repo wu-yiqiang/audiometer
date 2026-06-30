@@ -38,7 +38,7 @@ class _LanguageCard extends State<LanguageCard> {
                           direction: Axis.horizontal,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('English', style: TextStyle(fontSize: 18)),
+                            Text('English', style: TextStyle(fontSize: 16)),
                             ?generalController.language.value ==
                                     LanguageEnMap.lang
                                 ? Icon(Icons.check, color: PrimaryColor)
@@ -60,7 +60,7 @@ class _LanguageCard extends State<LanguageCard> {
                           direction: Axis.horizontal,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('简体中文', style: TextStyle(fontSize: 18)),
+                            Text('简体中文', style: TextStyle(fontSize: 16)),
                             ?generalController.language.value ==
                                     LanguageZhMap.lang
                                 ? Icon(Icons.check, color: PrimaryColor)
@@ -91,18 +91,18 @@ class _LanguageCard extends State<LanguageCard> {
                 direction: Axis.vertical,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: 4,
-                children: [Text("language".tr, style: TextStyle(fontSize: 18))],
+                children: [Text("language".tr, style: TextStyle(fontSize: 16))],
               ),
             ),
             Row(
               spacing: 8,
               children: [
                 Text(
-                  generalController.languageLabel.value,
-                  style: TextStyle(fontSize: 18),
+                  generalController.languageLabel,
+                  style: TextStyle(fontSize: 16),
                 ),
               ],
-            ),
+            )
           ],
         );
       }),

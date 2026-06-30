@@ -34,7 +34,7 @@ class _ThemeCard extends State<ThemeCard> {
                         direction: Axis.horizontal,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('lightMode'.tr, style: TextStyle(fontSize: 18)),
+                          Text('lightMode'.tr, style: TextStyle(fontSize: 16)),
                           ?generalController.theme.value == ThemeModeMap.light
                               ? Icon(Icons.check, color: PrimaryColor)
                               : null,
@@ -58,7 +58,7 @@ class _ThemeCard extends State<ThemeCard> {
                         direction: Axis.horizontal,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('darkMode'.tr, style: TextStyle(fontSize: 18)),
+                          Text('darkMode'.tr, style: TextStyle(fontSize: 16)),
                           ?generalController.theme.value == ThemeModeMap.dark
                               ? Icon(Icons.check, color: PrimaryColor)
                               : null,
@@ -83,13 +83,13 @@ class _ThemeCard extends State<ThemeCard> {
               direction: Axis.vertical,
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 4,
-              children: [Text("theme".tr, style: TextStyle(fontSize: 18))],
+              children: [Text("theme".tr, style: TextStyle(fontSize: 16))],
             ),
           ),
           Obx(() {
             return Row(
               spacing: 8,
-              children: [Text(generalController.themeLabel.value.tr, style: TextStyle(fontSize: 18))],
+              children: [Text(generalController.themeLabel.tr, style: TextStyle(fontSize: 16))],
             );
           }),
         ],

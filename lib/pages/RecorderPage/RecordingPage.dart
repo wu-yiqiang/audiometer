@@ -14,7 +14,7 @@ class _RecordingPage extends State<RecordingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("sdsss是生生世世生生世世生生世世生生世世是事实221ss1", style: TextStyle(fontSize: 14),),
+        title: Text("sdsss是生生世世生生世世生生世世生生世世是事实221ss1", style: TextStyle(fontSize: 16),),
       ),
       body:SafeArea(child:  Padding(padding: EdgeInsetsGeometry.all(14), child: Text("sds"),)),
     );

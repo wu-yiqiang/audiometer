@@ -19,5 +19,8 @@ final Map<String, String> en_US = {
   'darkMode': "Dark Mode",
   'lightMode': "Light Mode",
   'selectTheme': "Select Theme",
-  'systemTheme': 'System Theme'
+  'systemTheme': 'System Theme',
+  'selectRecorderFormat': "Select Recorder Format",
+  'privacyPolicy': "Privacy Policy",
+  'contactAuthor': "Contact Author"
   };

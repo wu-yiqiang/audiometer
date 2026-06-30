@@ -1,17 +1,20 @@
 import 'dart:ui';
 
+import 'package:audiometer/common/const.dart';
 import 'package:get_storage/get_storage.dart';
 
 final settingStoreKeys = <String, String>{
   "LANGUAGE": "language",
   "COUNTRY": "country",
   "THEME": "theme",
+  "RECORDERFORMAT": "recorderFormat"
 };
 
 void storeInit() {
   dynamic language = storeGetValue(settingStoreKeys['LANGUAGE']!);
   dynamic country = storeGetValue(settingStoreKeys['COUNTRY']!);
   dynamic theme = storeGetValue(settingStoreKeys['THEME']!);
+  dynamic recorderFormat = storeGetValue(settingStoreKeys['RECORDERFORMAT']!);
   if (language == null) {
     storeSetValue(settingStoreKeys['LANGUAGE']!, 'en');
   }
@@ -19,7 +22,10 @@ void storeInit() {
     storeSetValue(settingStoreKeys['COUNTRY']!, 'US');
   }
   if (theme == null) {
-    storeSetValue(settingStoreKeys['THEME']!, 'light');
+    storeSetValue(settingStoreKeys['THEME']!, ThemeModeMap.light);
+  }
+  if (recorderFormat == null) {
+    storeSetValue(settingStoreKeys['RECORDERFORMAT']!, RecorderMap.mp3);
   }
 }
 

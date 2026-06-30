@@ -21,7 +21,7 @@ class _Recorder extends State<Recorder> {
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(6)),
-        color: isDark() ? DarkBackgroundColor : LightBackgroundColor,
+        color: Theme.of(context).colorScheme.surfaceContainer, 
       ),
       child: Flex(
         direction: Axis.vertical,
