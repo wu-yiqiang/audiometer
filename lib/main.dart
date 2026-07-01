@@ -1,4 +1,5 @@
 import 'package:audiometer/binding.dart';
+import 'package:audiometer/common/const.dart';
 import 'package:audiometer/pages/Settings/settings_controller/general_controller.dart';
 import 'package:audiometer/router/router.dart';
 import 'package:audiometer/store/store.dart';
@@ -31,6 +32,9 @@ class MyApp extends StatelessWidget {
         initialRoute: routerMap['HOME'],
         getPages: AppPages.pages,
         theme: ThemeData(
+          textSelectionTheme: TextSelectionThemeData(
+            cursorColor: PrimaryColor,
+          ),
           brightness: generalController.theme.value == 'light'
               ? Brightness.light
               : Brightness.dark,

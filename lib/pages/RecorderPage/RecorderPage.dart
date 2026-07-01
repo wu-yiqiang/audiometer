@@ -29,16 +29,16 @@ class RecorderPage extends StatelessWidget {
             children: [
               Obx(() {
                 return Expanded(
-                  child: SingleChildScrollView(
-                    child: Flex(
-                      direction: Axis.vertical,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      spacing: 20,
-                      children: recorderController.recorders.map((v) {
-                        return Recorder(recorder: v);
-                      }).toList(),
-                    ),
+                  child: ListView.separated(
+                    separatorBuilder: (context, index) {
+                      return SizedBox(height: 16);
+                    },
+                    itemCount: recorderController.recorders.length,
+                    itemBuilder: (context, index) {
+                      return Recorder(
+                        recorder: recorderController.recorders[index],
+                      );
+                    },
                   ),
                 );
               }),
