@@ -7,6 +7,7 @@ import 'package:audiometer/utils/eventBus.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 void main() async {
   await GetStorage.init();
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
     late GeneralController generalController = Get.put(GeneralController());
     return Obx(() {
       return GetMaterialApp(
+        builder: EasyLoading.init(),
         initialRoute: routerMap['HOME'],
         getPages: AppPages.pages,
         theme: ThemeData(

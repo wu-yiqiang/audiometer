@@ -66,7 +66,7 @@ class _AudioSettings extends State<AudioSettings> {
                         ),
                       );
                     }),
-                    Divider(color: BorderColor),
+                    Divider(),
                     Obx(() {
                       return Expanded(
                         child: GestureDetector(

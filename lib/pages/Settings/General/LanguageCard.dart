@@ -51,7 +51,7 @@ class _LanguageCard extends State<LanguageCard> {
                       ),
                     );
                   }),
-                  Divider(color: BorderColor),
+                  Divider(),
                   Obx(() {
                     return Expanded(
                       child: GestureDetector(

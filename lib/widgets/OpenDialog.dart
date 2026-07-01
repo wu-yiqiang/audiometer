@@ -2,9 +2,14 @@ import 'package:audiometer/common/const.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-Future<bool?> showDeleteConfirmDialog(context, String title, Widget widget) {
+Future<bool?> openDialog(
+  context,
+  String title,
+  Widget widget, {
+  Function? submit,
+}) {
   final screenWidth = MediaQuery.of(context).size.width;
-  final dialogWidth = screenWidth * 0.8; 
+  final dialogWidth = screenWidth * 0.8;
   return showDialog<bool>(
     context: context,
     builder: (context) {
@@ -16,10 +21,7 @@ Future<bool?> showDeleteConfirmDialog(context, String title, Widget widget) {
         content: Container(
           padding: EdgeInsetsGeometry.all(2),
           width: dialogWidth,
-          child: Container(
-            width: double.infinity,
-            child: widget,
-          ),
+          child: Container(width: double.infinity, child: widget),
         ),
         actions: <Widget>[
           TextButton(
@@ -27,13 +29,20 @@ Future<bool?> showDeleteConfirmDialog(context, String title, Widget widget) {
               foregroundColor: WidgetStateProperty.all(Colors.grey),
             ),
             child: Text('cancel'.tr),
-            onPressed: () => Navigator.of(context).pop(),
+            onPressed: () => Navigator.of(context).pop(true),
           ),
           TextButton(
-            style: ButtonStyle(foregroundColor: WidgetStateProperty.all(PrimaryColor)),
+            style: ButtonStyle(
+              foregroundColor: WidgetStateProperty.all(PrimaryColor),
+            ),
             child: Text('confirm'.tr),
             onPressed: () {
-              Navigator.of(context).pop(true);
+              if (submit != null) {
+                submit();
+              } else {
+                Navigator.of(context).pop(true);
+
+              }
             },
           ),
         ],

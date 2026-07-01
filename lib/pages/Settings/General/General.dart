@@ -21,7 +21,7 @@ class _General extends State<General> {
       title: "general".tr,
       widgets: [
         LanguageCard(),
-        Divider(color: BorderColor),
+        Divider(),
         ThemeCard()
       ],
     );

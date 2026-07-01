@@ -46,7 +46,7 @@ class _ThemeCard extends State<ThemeCard> {
                     ),
                   );
                 }),
-                Divider(color: BorderColor),
+                Divider(),
                 Obx(() {
                   return Expanded(
                     child: GestureDetector(

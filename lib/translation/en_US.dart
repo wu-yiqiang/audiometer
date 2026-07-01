@@ -22,5 +22,8 @@ final Map<String, String> en_US = {
   'systemTheme': 'System Theme',
   'selectRecorderFormat': "Select Recorder Format",
   'privacyPolicy': "Privacy Policy",
-  'contactAuthor': "Contact Author"
-  };
+  'contactAuthor': "Contact Author",
+  'deleteFailed': "Delete Failed",
+  'titleIsNotEmpty': "Title Is Not Empty",
+  'titleRepeated': "Title Repeated"
+};

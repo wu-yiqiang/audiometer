@@ -43,7 +43,7 @@ class _About extends State<About> {
             Icon(Icons.keyboard_arrow_right),
           ],
         )),
-        Divider(color: BorderColor),
+        Divider(),
         GestureDetector(
           behavior: HitTestBehavior.opaque,
           onTap: () {
@@ -69,7 +69,7 @@ class _About extends State<About> {
             ],
           ),
         ),
-        Divider(color: BorderColor),
+        Divider(),
         Flex(
           direction: Axis.horizontal,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

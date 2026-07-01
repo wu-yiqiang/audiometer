@@ -1,7 +1,6 @@
 import 'package:audiometer/pages/Settings/About/About.dart';
 import 'package:audiometer/pages/Settings/AudioSettings/AudioSettings.dart';
 import 'package:audiometer/pages/Settings/General/General.dart';
-import 'package:audiometer/widgets/SettingsCard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

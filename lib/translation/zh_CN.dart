@@ -22,5 +22,8 @@ final Map<String, String> zh_CN = {
   'systemTheme': '系统主题',
   'selectRecorderFormat': "选择录制格式",
   'privacyPolicy': "隐私政策",
-  'contactAuthor': "联系作者"
+  'contactAuthor': "联系作者",
+  'deleteFailed': "删除失败",
+  'titleIsNotEmpty': "标题不能为空",
+  'titleRepeated': "标题重复"
 };
